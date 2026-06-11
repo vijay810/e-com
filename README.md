@@ -8,6 +8,16 @@ The application supports two roles:
 - Admin
 - User
 
+### Demo Credentials
+###### Admin Login
+Username : admin
+Password : admin123
+Role     : ADMIN
+##### User Login
+Username : user
+Password : user123
+Role     : USER
+
 Authentication is implemented using Local Storage and Angular Route Guards.
 
 # Features

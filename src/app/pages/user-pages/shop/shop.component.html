@@ -2,37 +2,95 @@
 
   <div class="row">
 
-    <div
-      class="col-md-3 mb-4"
-      *ngFor="let product of products">
+    <!-- Skeleton Loader -->
 
-      <div class="card h-100 shadow">
+    <ng-container *ngIf="loading">
 
-        <img
-          [src]="product.thumbnail"
-          class="card-img-top">
+      <div
+        class="col-md-3 mb-4"
+        *ngFor="let item of [1,2,3,4,5,6,7,8]">
 
-        <div class="card-body">
+        <div class="card p-3 shadow">
 
-          <h5>{{product.title}}</h5>
+          <ngx-skeleton-loader
+            count="1"
+            appearance="line"
+            [theme]="{
+              height:'200px',
+              width:'100%'
+            }">
+          </ngx-skeleton-loader>
 
-          <p>
-            ₹ {{product.price}}
-          </p>
+          <ngx-skeleton-loader
+            count="1"
+            appearance="line"
+            [theme]="{
+              height:'20px',
+              marginTop:'15px'
+            }">
+          </ngx-skeleton-loader>
 
-          <button
-            class="btn btn-primary w-100"
-            (click)="details(product.id)">
+          <ngx-skeleton-loader
+            count="1"
+            appearance="line"
+            [theme]="{
+              height:'20px',
+              width:'50%'
+            }">
+          </ngx-skeleton-loader>
 
-            View Details
-
-          </button>
+          <ngx-skeleton-loader
+            count="1"
+            appearance="line"
+            [theme]="{
+              height:'40px',
+              marginTop:'15px'
+            }">
+          </ngx-skeleton-loader>
 
         </div>
 
       </div>
 
-    </div>
+    </ng-container>
+
+    <!-- Products -->
+
+    <ng-container *ngIf="!loading">
+
+      <div
+        class="col-md-3 mb-4"
+        *ngFor="let product of products">
+
+        <div class="card h-100 shadow product-card">
+
+          <img
+            [src]="product.thumbnail"
+            class="card-img-top product-img">
+
+          <div class="card-body">
+
+            <h5>{{product.title}}</h5>
+
+            <p class="fw-bold text-success">
+              ₹ {{product.price}}
+            </p>
+
+            <button
+              class="btn btn-primary w-100"
+              (click)="details(product.id)">
+
+              View Details
+
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </ng-container>
 
   </div>
 
