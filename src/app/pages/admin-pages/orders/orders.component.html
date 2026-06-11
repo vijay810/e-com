@@ -1,0 +1,31 @@
+<div class="container mt-4">
+
+  <h2>Orders</h2>
+
+  <table class="table table-bordered">
+
+    <thead>
+      <tr>
+        <th>Order ID</th>
+        <th>User ID</th>
+        <th>Total Products</th>
+      </tr>
+    </thead>
+
+    <tbody>
+
+      <tr *ngFor="let order of orders">
+
+        <td>{{order.id}}</td>
+
+        <td>{{order.userId}}</td>
+
+        <td>{{order.totalProducts}}</td>
+
+      </tr>
+
+    </tbody>
+
+  </table>
+
+</div>

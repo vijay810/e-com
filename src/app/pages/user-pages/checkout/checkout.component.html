@@ -1,0 +1,102 @@
+<div class="container mt-4">
+
+  <!-- Success Message -->
+
+  <div
+    *ngIf="successMessage"
+    class="alert alert-success text-center">
+
+    <i class="fa-solid fa-circle-check me-2"></i>
+
+    Order Placed Successfully!
+
+    Redirecting to Shop...
+
+  </div>
+
+  <div
+    class="card shadow"
+    *ngIf="!successMessage">
+
+    <div class="card-header bg-success text-white">
+
+      <h4 class="mb-0">
+
+        <i class="fa-solid fa-credit-card me-2"></i>
+
+        Checkout
+
+      </h4>
+
+    </div>
+
+    <div class="card-body">
+
+      <div *ngIf="cartItems.length === 0">
+
+        <div class="alert alert-warning">
+
+          Cart is Empty
+
+        </div>
+
+      </div>
+
+      <div *ngIf="cartItems.length > 0">
+
+        <table class="table table-bordered">
+
+          <thead>
+
+            <tr>
+
+              <th>Product</th>
+              <th>Price</th>
+
+            </tr>
+
+          </thead>
+
+          <tbody>
+
+            <tr *ngFor="let item of cartItems">
+
+              <td>{{ item.title }}</td>
+
+              <td>₹ {{ item.price }}</td>
+
+            </tr>
+
+          </tbody>
+
+        </table>
+
+        <div class="d-flex justify-content-between mt-3">
+
+          <h4>
+            Total Amount
+          </h4>
+
+          <h4>
+            ₹ {{ totalAmount }}
+          </h4>
+
+        </div>
+
+        <button
+          class="btn btn-success w-100 mt-3"
+          (click)="placeOrder()">
+
+          <i class="fa-solid fa-check me-2"></i>
+
+          Place Order
+
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

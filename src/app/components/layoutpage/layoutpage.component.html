@@ -1,0 +1,50 @@
+<app-header></app-header>
+
+<div class="main-wrapper">
+
+  <div class="sidebar" *ngIf="isAdmin()">
+
+    <ul class="nav flex-column pt-3">
+
+      <li class="nav-item">
+        <a routerLink="/admin/dashboard"
+           routerLinkActive="active"
+           class="nav-link">
+          <i class="fa-solid fa-chart-line me-2"></i>
+          Dashboard
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a routerLink="/admin/products"
+           routerLinkActive="active"
+           class="nav-link">
+          <i class="fa-solid fa-box-open me-2"></i>
+          Products
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a routerLink="/admin/orders"
+           routerLinkActive="active"
+           class="nav-link">
+          <i class="fa-solid fa-cart-shopping me-2"></i>
+          Orders
+        </a>
+      </li>
+
+    </ul>
+
+  </div>
+
+  <div
+    class="content"
+    [class.admin-content]="isAdmin()">
+
+    <router-outlet></router-outlet>
+
+  </div>
+
+</div>
+
+<app-footer></app-footer>

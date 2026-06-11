@@ -1,0 +1,109 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+
+  <div class="container">
+
+    <!-- Logo -->
+    <a class="navbar-brand fw-bold fs-4" routerLink="/">
+      <i class="fa-solid fa-store me-2"></i>
+      E-Commerce
+    </a>
+
+    <!-- Mobile Toggle -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav">
+
+      <span class="navbar-toggler-icon"></span>
+
+    </button>
+
+    <!-- Menu -->
+    <div
+      class="collapse navbar-collapse"
+      id="navbarNav">
+
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+
+        <!-- Admin Menu -->
+
+        <li
+          class="nav-item"
+          *ngIf="getRole() === 'ADMIN'">
+
+          <a
+            routerLink="/admin/dashboard"
+            routerLinkActive="active"
+            class="nav-link px-3">
+
+            <i class="fa-solid fa-chart-line me-1"></i>
+            Dashboard
+
+          </a>
+
+        </li>
+
+        <!-- User Menu -->
+
+        <li
+          class="nav-item"
+          *ngIf="getRole() === 'USER'">
+
+          <a
+            routerLink="/shop"
+            routerLinkActive="active"
+            class="nav-link px-3">
+            <i class="fa-solid fa-bag-shopping me-1"></i>
+          </a>
+        </li>
+
+        <!-- Cart -->
+
+        <li
+          class="nav-item"
+          *ngIf="getRole() === 'USER'">
+
+          <a
+            routerLink="/cart"
+            routerLinkActive="active"
+            class="nav-link px-3 position-relative">
+
+            <i class="fa-solid fa-cart-shopping fs-5"></i>
+
+            <span
+              *ngIf="cartCount > 0"
+              class="badge rounded-pill bg-danger cart-badge">
+
+              {{ cartCount }}
+
+            </span>
+
+          </a>
+
+        </li>
+
+        <!-- Logout -->
+
+        <li
+          class="nav-item ms-lg-3 mt-2 mt-lg-0"
+          *ngIf="isLoggedIn()">
+
+          <button
+            class="btn btn-danger btn-sm px-3"
+            (click)="logout()">
+
+            <i class="fa-solid fa-right-from-bracket me-1"></i>
+            Logout
+
+          </button>
+
+        </li>
+
+      </ul>
+
+    </div>
+
+  </div>
+
+</nav>
