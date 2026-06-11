@@ -1,5 +1,5 @@
 E-Commerce Application (Angular 19 + Bootstrap 5.3)
-📌 Project Overview
+Project Overview
 
 This is a Role-Based E-Commerce Web Application built using Angular 19, Bootstrap 5.3, TypeScript, and DummyJSON API.
 
@@ -21,24 +21,24 @@ Role     : USER
 Authentication is implemented using Local Storage and Angular Route Guards.
 
 # Features
-Authentication
-Role Based Login
-Admin Login
-User Login
-Route Guards
-Logout Functionality
-Local Storage Session Management
-Admin Module
-Dashboard
-Total Products Count
-Total Users Count
-Total Orders Count
-Products
-Product Listing
-Product Details
-Orders
-Order Management View
-User Module
+## Authentication
+- Role Based Login
+- Admin Login
+- User Login
+- Route Guards
+- Logout Functionality
+- Local Storage Session Management
+### Admin Module
+#- Dashboard
+- Total Products Count
+- Total Users Count
+- Total Orders Count
+#- Products
+- Product Listing
+- Product Details
+- Orders
+#- Order Management View
+### User Module
 Shop
 View Products
 Product Cards
