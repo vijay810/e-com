@@ -1,0 +1,6 @@
+[build]
+publish = "dist/ekagra"
+[[redirects]]
+from = "/"
+to = "/index.html"
+status = 200
